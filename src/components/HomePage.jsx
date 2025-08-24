@@ -33,7 +33,7 @@ const HomePage = () => {
     <div className="container">
       {/* Header */}
       <div className="header">
-        <h1>E-Commerce <i> KLU APP</i></h1>
+        <h1>E-Commerce Platform</h1>
         <div className="header-right">
           {isAuthenticated ? (
             <div className="profile-menu">

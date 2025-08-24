@@ -20,16 +20,16 @@ const Payment = () => {
     <div className="payment-container">
       <h2>Payment</h2>
       {cartItems.length === 0 ? (
-        <p>No items to checkout</p>
+        <p>No items to Pay</p>
       ) : (
         <>
           {cartItems.map((item) => (
             <div key={item.id}>
               <h4>{item.name}</h4>
-              <p>${item.price}</p>
+              <p>Rs.{item.price}</p>
             </div>
           ))}
-          <button onClick={handlePayment}>Pay Now</button>
+          <button className="pay"onClick={handlePayment}>Pay Now</button>
         </>
       )}
     </div>

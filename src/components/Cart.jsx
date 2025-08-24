@@ -3,7 +3,7 @@ import { useCart } from "../context/CartContext";
 import { useNavigate } from "react-router-dom";
 import "./style.css";
 
-const BASE_URL = 'http://localhost:9090/back1';
+const BASE_URL = 'http://localhost:5173/ecommerce/';
 
 const Cart = () => {
   const { cartItems, removeFromCart } = useCart();
@@ -23,15 +23,15 @@ const Cart = () => {
           {cartItems.map((item) => (
             <div key={item.id} className="cart-item">
               <img
-                src={`${BASE_URL}/api/products/images/${item.imagePath}`}
+                src={`${BASE_URL}${item.imagePath}`}
                 alt={item.name}
               />
               <h4>{item.name}</h4>
               <p>${item.price}</p>
-              <button onClick={() => removeFromCart(item.id)}>Remove</button>
+              <button className="color" onClick={() => removeFromCart(item.id) }>Remove</button>
             </div>
           ))}
-          <button onClick={handleCheckout}>Proceed to Checkout</button>
+          <button className="pay" onClick={handleCheckout}>Proceed to Pay</button>
         </>
       )}
     </div>
